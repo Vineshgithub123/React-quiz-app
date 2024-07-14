@@ -1,0 +1,33 @@
+@import '../../assets/scss/main.scss';
+
+.wrapper {
+    background-color: $light;
+    border-radius: 10px;
+    padding: 30px;
+    .user-quiz-details {
+        @include d-flex(column);
+        gap: 20px;
+        .restart-btn {
+            @include d-flex-ai(center);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: $primary-color;
+            color: $light;
+            transition: all 0.3s ease;
+            &:hover {
+                background-color: $dark-grey;
+            }
+            img {
+                margin-right: 1rem;
+                width: 20px;
+                height: 20px;
+            }
+            span {
+                font-size: 1rem;
+                font-weight: $font-weight-600;
+            }
+        }
+    }
+}

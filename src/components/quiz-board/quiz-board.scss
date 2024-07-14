@@ -1,0 +1,96 @@
+@import '../../assets/scss/main.scss';
+
+.board {
+    background: $light;
+    width: 600px;
+    border-radius: 30px;
+    padding: 33px;
+    border: 1px solid $grey;
+    box-shadow: 4px 4px $dark-blue-01;
+    max-width: 600px;
+    .top {
+        @include d-flex-jc(space-between);
+        .question-no {
+            .current-ques {
+                font-size: 33px;
+                font-weight: 700;
+                color: $teritiary-color;
+            }
+            .total-ques {
+                font-size: 20px;
+                color: $dark;
+                font-weight: $font-weight-600;
+            }
+        }
+        .timer {
+            @include d-flex-ai(center);
+            gap: 7px;
+            .timer-img {
+                height: 26px;
+            }
+        }
+    }
+    .ques-ans {
+        .question {
+            font-weight: $font-weight-600;
+        }
+        .answers {
+            @include d-flex-fd(column, flex-start);
+            gap: 10px;
+            .options {
+                padding: 5px;
+                border: 1px solid $dark-magenta;
+                width: 100%;
+                border-radius: 10px;
+                word-wrap: break-word;
+                line-height: 1.5;
+                transition: all .3s;
+                &:hover {
+                    transform: translateZ(4px);
+                    box-shadow: 3px 3px $dark-magenta;
+                }
+                &.incorrect {
+                    background-image: url("../../assets/images/wrong-ans.svg");
+                }
+                &.correct {
+                    background-image: url("../../assets/images/right-ans.svg");
+                }
+            }
+        }
+    }
+    .bottom {
+        @include d-flex-jc(flex-end);
+        padding: 20px;
+        .next-btn {
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $dark-blue-01;
+                border-radius: 10rem;
+                z-index: -2;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                background-color: darken($dark-blue-01, 15%);
+                transition: all .3s;
+                border-radius: 10rem;
+                z-index: -1;
+            }
+            &:hover {
+                color: $light;
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@import '../../assets/scss/main.scss';
+
+.board-wrapper {
+    @include d-flex-fd-jc(column, center, center);
+    height: 100vh;
+    background: $primary-color;
+    gap: 30px;
+}

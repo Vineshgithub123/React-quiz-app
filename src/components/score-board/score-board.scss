@@ -1,0 +1,20 @@
+@import '../../assets/scss/main.scss';
+.score-card-wrap {
+    .content {
+        @include d-flex-ai(center);
+        gap: 30px;
+        position: relative;
+        border-radius: 50px;
+        padding: 16px 24px;
+        background-color: $light-01;
+        box-shadow: inset 0 -4px 8px $ocean-blue, 0 4px 6px $dark;
+        cursor: pointer;
+        color: $teritiary-color;
+    }
+    .score {
+        span {
+            font-size: 30px;
+            font-weight: $font-weight-600;
+        }
+    }
+}

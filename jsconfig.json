@@ -4,10 +4,6 @@
     "baseUrl": "."
   },
   "resolve": {
-    "extensions": [".js", ".jsx", ".json"],
-    "alias": {
-      "react": "react/cjs/react.production.min.js",
-      "react-dom": "react-dom/cjs/react-dom.production.min.js"
-    }
+    "extensions": [".js", ".jsx", ".json"]
   }
 }

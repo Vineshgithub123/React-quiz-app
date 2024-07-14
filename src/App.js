@@ -1,8 +1,8 @@
-import Quiz from './pages/quiz/quiz';
-import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { QuizProvider } from './contexts/quizContext';
-import Home from './pages/home/home';
+import './App.scss';
+import Quiz from 'src/pages/quiz/quiz';
+import { QuizProvider } from 'src/contexts/quizContext';
+import Home from 'src/pages/home/home';
 
 function App() {
   return (

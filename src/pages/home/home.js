@@ -1,6 +1,6 @@
 import "./home.scss";
-import homeIcon from "../../assets/images/home-icons.svg";
-import thinkLogo from "../../assets/images/think.svg";
+import homeIcon from "src/assets/images/home-icons.svg";
+import thinkLogo from "src/assets/images/think.svg";
 import { Link } from 'react-router-dom';
 const Home = () => {
     return (<div className="home-wrapper">

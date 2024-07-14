@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import timerlogo from "../../assets/images/timer.svg";
+import timerlogo from "src/assets/images/timer.svg";
 import "./quiz-board.scss";
-import { quizContext } from '../../contexts/quizContext';
-import { QUESTIONS } from "../../utils/constants/questions";
+import { quizContext } from 'src/contexts/quizContext';
+import { QUESTIONS } from "src/utils/constants/questions";
 
 const QuizBoard = () => {
   const {

@@ -1,6 +1,6 @@
 import React from "react";
-import timeUpLogo from "../../assets/images/time-up.svg";
-import rightArrow from "../../assets/images/right-arrow.svg"
+import timeUpLogo from "src/assets/images/time-up.svg";
+import rightArrow from "src/assets/images/right-arrow.svg"
 import "./time-up.scss"
 
 const TimeUpModal = ({ isOpen, onClose }) => {

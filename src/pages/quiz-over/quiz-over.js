@@ -1,6 +1,6 @@
 import './quiz-over.scss';
-import restartLogo from '../../assets/images/restart.svg'
-import { quizContext } from '../../contexts/quizContext';
+import restartLogo from 'src/assets/images/restart.svg'
+import { quizContext } from 'src/contexts/quizContext';
 
 const QuizFinished = () => {
     // const {}

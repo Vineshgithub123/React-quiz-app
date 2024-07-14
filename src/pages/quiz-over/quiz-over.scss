@@ -1,32 +1,61 @@
 @import '../../assets/scss/main.scss';
 
 .wrapper {
-    background-color: $light;
+    background-color: #332d2d;
     border-radius: 10px;
     padding: 30px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     .user-quiz-details {
         @include d-flex(column);
+        background: white;
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        width: 600px;
         gap: 20px;
-        .restart-btn {
-            @include d-flex-ai(center);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            background-color: $primary-color;
-            color: $light;
-            transition: all 0.3s ease;
-            &:hover {
-                background-color: $dark-grey;
+
+        .quiz-content {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+        }
+
+        .replay {
+            display: flex;
+            justify-content: space-evenly;
+
+            a {
+                text-decoration: none;
             }
-            img {
-                margin-right: 1rem;
-                width: 20px;
-                height: 20px;
-            }
-            span {
-                font-size: 1rem;
-                font-weight: $font-weight-600;
+
+            .restart-btn {
+                @include d-flex-ai(center);
+                padding: 1rem 2rem;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                background-color: $primary-color;
+                color: $light;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: $dark-grey;
+                }
+
+                img {
+                    margin-right: 1rem;
+                    width: 20px;
+                    height: 20px;
+                }
+
+                span {
+                    font-size: 1rem;
+                    font-weight: $font-weight-600;
+                }
             }
         }
     }

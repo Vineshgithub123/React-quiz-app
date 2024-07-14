@@ -45,15 +45,22 @@
                 word-wrap: break-word;
                 line-height: 1.5;
                 transition: all .3s;
+                position: relative;
                 &:hover {
                     transform: translateZ(4px);
                     box-shadow: 3px 3px $dark-magenta;
                 }
                 &.incorrect {
                     background-image: url("../../assets/images/wrong-ans.svg");
+                    background-repeat: no-repeat;
+                    background-position: right;
+                    box-shadow: 3px 3px $dark-magenta;
                 }
                 &.correct {
                     background-image: url("../../assets/images/right-ans.svg");
+                    background-repeat: no-repeat;
+                    background-position: right;
+                    box-shadow: 3px 3px $dark-magenta;
                 }
             }
         }

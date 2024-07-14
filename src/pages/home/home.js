@@ -22,7 +22,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
-        <div class="questionmark-container"><img src={homeIcon} /></div>
+        <div className="questionmark-container"><img src={homeIcon} /></div>
     </div>)
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import timeUpLogo from "src/assets/images/time-up.svg";
-import rightArrow from "src/assets/images/right-arrow.svg"
+
 import "./time-up.scss"
 
 const TimeUpModal = ({ isOpen, onClose }) => {
@@ -11,12 +11,11 @@ const TimeUpModal = ({ isOpen, onClose }) => {
         <div className={`modal-wrap ${isOpen ? 'open' : ''}`} >
             <div className="modal-content">
                 {/* <img src={timeUpLogo} /> */}
-                <div class="text">
+                <div className="text">
                     <p>Oopss!!</p>
                     <p>Time Up!!..</p>
+                    <button onClick={handleButtonClick}>asd</button>
                 </div>
-                <button className="try-next-btn" data-text="Try Next Question" onClick={handleButtonClick}>
-                    <img className="img" src={rightArrow} /></button>
             </div>
         </div>
     )

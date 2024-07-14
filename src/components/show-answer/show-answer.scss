@@ -1,0 +1,94 @@
+@import '../../assets/scss/main.scss';
+
+.answer-wrapper {
+    display: none;
+
+    &.open {
+        // display: block;
+        align-content: center;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .answer-content {
+            background: white;
+            border-radius: 20px;
+            // height: 300px;
+            width: auto;
+            display: inline-block;
+            padding: 20px;
+
+            .image {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    height: 60px;
+                }
+            }
+
+            .answer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .try-next-btn {
+                display: block;
+                background-color: $red;
+                width: 200px;
+                height: 50px;
+                line-height: 100px;
+                margin: auto;
+                color: $light;
+                position: relative;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                cursor: pointer;
+                overflow: hidden;
+                border-radius: 5px;
+                box-shadow: 0 0 20px 0 $dark;
+
+                &::after {
+                    content: attr(data-text);
+                    font-family: cursive;
+                    font-size: 25px;
+                    position: relative;
+                    bottom: 27px;
+                }
+
+                .img {
+                    position: absolute;
+                    height: 48px;
+                    left: 0;
+                    display: inline-block;
+                    width: 0;
+                }
+
+                &:hover {
+                    .img {
+                        width: 100%;
+                        transition: width 0.6s ease-in-out;
+                    }
+
+                    &::after {
+                        display: block;
+                        animation: slide-left-in 0.5s ease-in-out forwards;
+                    }
+                }
+            }
+        }
+    }
+}

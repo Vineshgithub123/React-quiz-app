@@ -1,20 +1,9 @@
 import React, { createContext, useState } from "react";
 
 const quizContext = createContext({
-  currentQuestion: null,
-  currentQuestionNumber: 1,
-  isCurrentQuestionAnswered: false,
-  totalAttempts: 0,
-  rightAnswers: 0,
-  wrongAnswers: 0,
-  currentScore: 0,
-  setCurrentQuestion: () => {},
-  setSelectedOption: () => {},
-  setIsCurrentQuestionAnswered: () => {},
-  setCurrentScore: () => {},
-  setRightAnswers: () => {},
-  setWrongAnswers: () => {},
-  setTotalAttempts: () => {}
+  userResponse: {},
+  setUserResponse: () => { }
+  
 });
 
 const QuizProvider = ({ children }) => {
@@ -23,9 +12,8 @@ const QuizProvider = ({ children }) => {
   const [currentQuestionNumber, setCurrentQuestionNumber] = useState(1);
   const [isCurrentQuestionAnswered, setIsCurrentQuestionAnswered] = useState(false);
   const [currentScore, setCurrentScore] = useState(0);
-  const [totalAttempts, setTotalAttempts] = useState(0);
-  const [rightAnswers, setRightAnswers] = useState(0);
-  const [wrongAnswers, setWrongAnswers] = useState(0);
+  const [userResponse, setUserResponse] = useState({});
+
 
 
   const updateContext = (newState) => {
@@ -61,6 +49,8 @@ const QuizProvider = ({ children }) => {
         currentQuestionNumber,
         isCurrentQuestionAnswered,
         currentScore,
+        userResponse,
+        setUserResponse,
         setCurrentQuestion: updateContext,
         setSelectedOption,
         setIsCurrentQuestionAnswered,

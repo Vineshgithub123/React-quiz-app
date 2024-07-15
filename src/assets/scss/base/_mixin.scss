@@ -3,22 +3,18 @@
     flex-direction: $flex-direction;
     align-items: $align-items;
 }
-
 @mixin d-flex-jc($justify-content) {
     display: flex;
     justify-content: $justify-content;
 }
-
 @mixin d-flex-ai($align-item) {
     display: flex;
     align-items: $align-item;
 }
-
 @mixin d-block($align-content) {
     display: block;
     align-content: $align-content;
 }
-
 @mixin d-flex($flex-direction) {
     display: flex;
     flex-direction: $flex-direction;
@@ -28,4 +24,9 @@
     flex-direction: $flex-direction;
     align-items: $align-items;
     justify-content: $justify-content;
+}
+@mixin d-flex-ai-jc($align-items, $justify-content) {
+    display: flex;
+    align-items: $align-items;
+    justify-content:  $justify-content;
 }

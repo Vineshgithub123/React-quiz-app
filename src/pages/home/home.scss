@@ -23,18 +23,15 @@
                 color: $yellow-01;
                 text-shadow: 0px 1px 1px $grey, 0px 2px 1px $grey, 1px 2px 1px $grey, 1px 3px 1px $grey, 1px 4px 1px $grey, 1px 4px 1px $grey, 1px 6px 1px $grey, 1px 6px 1px $grey, 1px 7px 1px $grey, 1px 10px 1px $grey, 1px 18px 6px rgba(16, 16, 16, 0.4), 1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2), 1px 30px 60px rgba(16, 16, 16, 0.4);
             }
-
             ul {
                 font-size: 20px;
                 color: $light;
                 font-family: cursive;
                 list-style: auto
             }
-
             .begin-btn {
                 @include d-flex-jc(flex-end);
                 margin-top: 40px;
-
                 button {
                     padding: 20px;
                     background: $dark-blue-02;
@@ -43,16 +40,14 @@
                     padding: 0;
                     cursor: pointer;
                     outline-offset: 4px;
-
                     .front {
                         display: block;
                         padding: 12px 42px;
                         border-radius: 12px;
                         font-size: 1.25rem;
-                        background: #7a00ec;
-                        color: #fff;
+                        background: $teritiary-color;
+                        color: $light;
                     }
-
                     &:active .front {
                         transform: translateY(-2px);
                     }

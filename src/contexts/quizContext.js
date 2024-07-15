@@ -1,9 +1,6 @@
 import React, { createContext, useState } from "react";
 
 const quizContext = createContext({
-  userResponse: {},
-  setUserResponse: () => { },
-
   totalQuestions: 0,
   setTotalQuestions: () => { },
   currentQuestion: 0,
@@ -19,7 +16,6 @@ const quizContext = createContext({
 });
 
 const QuizProvider = ({ children }) => {
-  const [userResponse, setUserResponse] = useState({});
   const [totalQuestions, setTotalQuestions] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
@@ -27,16 +23,9 @@ const QuizProvider = ({ children }) => {
   const [noOfWrongAnswers, setNoOfWrongAnswers] = useState(0);
   const [noOfRightAnswers, setNoOfRightAnswers] = useState(0);
 
-  // console.log(userResponse)
-
-
   return (
     <quizContext.Provider
       value={{
-        userResponse,
-        setUserResponse,
-
-
         totalQuestions,
         setTotalQuestions,
         currentQuestion,

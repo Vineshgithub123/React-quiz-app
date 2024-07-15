@@ -6,7 +6,7 @@
     border-radius: 30px;
     padding: 33px;
     border: 1px solid $grey;
-    box-shadow: 6px 6px 6px 6px #767676;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     @media screen and (max-width: 800px) {
     width: 300px;
     }
@@ -28,9 +28,8 @@
             @include d-flex-ai(center);
             gap: 7px;
             .timer-text {
-                display: flex;
-                align-self: center;
-                color: red;
+                @include d-flex-ai(center);
+                color: $red;
                 font-weight: 700;
                 .timer-img {
                     height: 26px;
@@ -40,7 +39,7 @@
             .time {
                 font-size: 33px;
                 font-weight: 700;
-                color: #7a00ec;
+                color: $teritiary-color;
             }
         }
     }

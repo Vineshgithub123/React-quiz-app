@@ -23,6 +23,27 @@ const QuizProvider = ({ children }) => {
   const [noOfWrongAnswers, setNoOfWrongAnswers] = useState(0);
   const [noOfRightAnswers, setNoOfRightAnswers] = useState(0);
 
+  const [quizData, setQuizData] = useState({
+    currentQuestion: 0,
+    totalQuestions: 0,
+    currentScore: 0,
+    noOfQuestionAttempted: 0,
+    noOfWrongAnswers: 0,
+    noOfRightAnswers: 0
+  })
+
+  const resetQuizData = () => {
+    console.log('sds')
+    setQuizData({
+      currentQuestion: 0,
+      totalQuestions: 0,
+      currentScore: 0,
+      noOfQuestionAttempted: 0,
+      noOfWrongAnswers: 0,
+      noOfRightAnswers: 0
+    })
+  }
+
   return (
     <quizContext.Provider
       value={{
@@ -37,7 +58,8 @@ const QuizProvider = ({ children }) => {
         noOfRightAnswers,
         noOfWrongAnswers,
         setNoOfRightAnswers,
-        setNoOfWrongAnswers
+        setNoOfWrongAnswers,
+        resetQuizData
       }}
     >
       {children}

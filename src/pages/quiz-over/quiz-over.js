@@ -1,6 +1,6 @@
 //React imports
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 //Style imports
 import './quiz-over.scss';
 // User defined Imports
@@ -9,9 +9,12 @@ import restartLogo from 'src/assets/images/restart.svg';
 import homeLogo from 'src/assets/images/home.svg';
 
 const QuizFinished = () => {
-    const { currentScore, noOfQuestionAttempted, noOfWrongAnswers, noOfRightAnswers, setCurrentScore } = useContext(quizContext);
+    const { currentScore, noOfQuestionAttempted, noOfWrongAnswers, noOfRightAnswers, setCurrentScore, resetQuizData } = useContext(quizContext);
+    //Navigator
+    const navigate = useNavigate();
     const restart = () => {
-        setCurrentScore(prev => prev-prev);
+        resetQuizData();
+        navigate('/start-quiz')
     }
     return (
         <div className='wrapper'>
@@ -32,9 +35,7 @@ const QuizFinished = () => {
                     <Link to="/">
                         <button className='restart-btn'><img src={homeLogo} /><span>Go to Home</span></button>
                     </Link>
-                    <Link to='/start-quiz'>
-                        <button className='restart-btn'><img src={restartLogo} onClick={restart}/><span>Replay Quiz</span></button>
-                    </Link>
+                    <button className='restart-btn'  onClick={restart}><img src={restartLogo} /><span>Replay Quiz</span></button>
                 </div>
             </div>
         </div>

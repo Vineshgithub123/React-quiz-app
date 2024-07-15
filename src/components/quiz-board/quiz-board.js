@@ -9,7 +9,7 @@ import timerlogo from "src/assets/images/timer.svg";
 
 const QuizBoard = () => {
   //Context Variables
-  const {currentQuestion, setCurrentScore, setCurrentQuestion, setnoOfQuestionAttempted, setNoOfRightAnswers, setNoOfWrongAnswers} = useContext(quizContext);
+  const {currentQuestion, resetQuizData, setCurrentScore, setCurrentQuestion, setnoOfQuestionAttempted, setNoOfRightAnswers, setNoOfWrongAnswers} = useContext(quizContext);
 
   //Local Variables
   const [isTimeUpModalOpen, setIsTimeUpModalOpen] = useState(false);
@@ -23,6 +23,11 @@ const QuizBoard = () => {
   //Navigator
   const navigate = useNavigate();
 
+  //Useeffect executes when change in quizData
+  useEffect(()=> {
+    setCurrentQuestion(0)
+  }, resetQuizData)
+
   //Useeffect executes based on the timer and option chooses
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -32,7 +37,7 @@ const QuizBoard = () => {
       } else {
         clearInterval(intervalId);
         if (!choosenOption) {
-          setIsTimeUpModalOpen(true);
+          // setIsTimeUpModalOpen(true);
           setShowAnswerOnly(true)
         }
       }
@@ -123,7 +128,7 @@ const QuizBoard = () => {
         </div>
       </div>
       <div className="bottom">
-        <button className="quiz-next-btn next-btn" onClick={handleNext}>
+        <button disabled={!choosenOption || remainingTime === 0} className="quiz-next-btn next-btn" onClick={handleNext}>
           {!(currentQuestion < QUESTIONS.length - 1) ? "Submit" : 'Next'}
         </button>
       </div>

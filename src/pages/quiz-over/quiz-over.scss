@@ -14,7 +14,7 @@
         width: 600px;
         gap: 20px;
         .quiz-content {
-            @include d-flex(center);
+            @include d-flex(column);
             align-self: center;
         }
         .replay {

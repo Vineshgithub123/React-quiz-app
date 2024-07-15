@@ -80,8 +80,12 @@
     }
     .bottom {
         @include d-flex-jc(flex-end);
-        padding: 20px;
+        padding: 20px 0;
         .next-btn {
+            &:disabled {
+                pointer-events: none;
+                opacity: 0.5;
+            }
             &:after {
                 content: '';
                 position: absolute;

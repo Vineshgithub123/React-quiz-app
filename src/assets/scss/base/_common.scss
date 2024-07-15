@@ -18,14 +18,3 @@
 
 }
 
-.questionmark-container {
-    position: absolute;
-    width: 291px;
-    height: 100vh;
-    overflow: hidden;
-    @include d-flex-fd-jc(column, flex-end, center);
-    right: 106px;
-    font-size: 50px;
-    animation: questionmark-animation 3s infinite alternate ease-in-out;
-    bottom: 63px;
-}

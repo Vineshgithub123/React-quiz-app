@@ -4,6 +4,7 @@ import thinkLogo from "src/assets/images/think.svg";
 import { Link } from 'react-router-dom';
 const Home = () => {
     return (<div className="home-wrapper">
+        <div className="questionmark-container"><img src={homeIcon} /></div>
         <div className="content-wrap">
             <div className="content">
                 <h1><img src={thinkLogo} />Join for a Quiz?</h1>
@@ -22,7 +23,6 @@ const Home = () => {
                 </div>
             </div>
         </div>
-        <div className="questionmark-container"><img src={homeIcon} /></div>
     </div>)
 };
 

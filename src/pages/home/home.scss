@@ -6,13 +6,15 @@
     padding-left: 57px;
     height: 100vh;
     background: $primary-color;
+    @media (max-width: 1024px){
+        align-items: center;
+        justify-content: center;
+        padding: 24px !important;
+        height: auto;
+        min-height: 100vh;
+    }
     .content-wrap {
         display: flex;
-        img {
-            width: 87px;
-            height: auto;
-            align-self: flex-start;
-        }
         .content {
             position: relative;
             z-index: 2;
@@ -22,6 +24,18 @@
                 font-size: 60px;
                 color: $yellow-01;
                 text-shadow: 0px 1px 1px $grey, 0px 2px 1px $grey, 1px 2px 1px $grey, 1px 3px 1px $grey, 1px 4px 1px $grey, 1px 4px 1px $grey, 1px 6px 1px $grey, 1px 6px 1px $grey, 1px 7px 1px $grey, 1px 10px 1px $grey, 1px 18px 6px rgba(16, 16, 16, 0.4), 1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2), 1px 30px 60px rgba(16, 16, 16, 0.4);
+                @media (max-width: 1024px){
+                    font-size: 40px;
+                    margin-bottom: 45px;
+                }
+                img {
+                    width: 87px;
+                    height: auto;
+                    align-self: flex-start;
+                    @media (max-width: 1024px){
+                        width: 60px;
+                    }
+                }
             }
             ul {
                 font-size: 20px;
@@ -53,6 +67,28 @@
                     }
                 }
             }
+        }
+    }
+    .questionmark-container {
+        position: absolute;
+        width: 291px;
+        height: 100vh;
+        overflow: hidden;
+        @include d-flex-fd-jc(column, flex-end, center);
+        right: 106px;
+        font-size: 50px;
+        bottom: 63px;
+    }
+
+    @media (min-width: 1024px){
+        animation: questionmark-animation 3s infinite alternate ease-in-out;
+    }
+    
+    @media (max-width: 1024px){
+        .questionmark-container {
+            position: unset;
+            width: 210px;
+            height: unset;
         }
     }
 }

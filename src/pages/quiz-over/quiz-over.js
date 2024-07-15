@@ -16,6 +16,10 @@ const QuizFinished = () => {
         resetQuizData();
         navigate('/start-quiz')
     }
+    const goToHome = () => {
+        resetQuizData();
+        navigate('/')
+    } 
     return (
         <div className='wrapper'>
             <div className='user-quiz-details'>
@@ -33,7 +37,7 @@ const QuizFinished = () => {
                 </div>
                 <div className='replay'>
                     <Link to="/">
-                        <button className='restart-btn'><img src={homeLogo} /><span>Go to Home</span></button>
+                        <button className='restart-btn'><img src={homeLogo} onClick={goToHome}/><span>Go to Home</span></button>
                     </Link>
                     <button className='restart-btn'  onClick={restart}><img src={restartLogo} /><span>Replay Quiz</span></button>
                 </div>

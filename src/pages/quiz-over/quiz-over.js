@@ -1,14 +1,18 @@
+//React imports
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+//Style imports
 import './quiz-over.scss';
+// User defined Imports
+import { quizContext } from 'src/contexts/quizContext';
 import restartLogo from 'src/assets/images/restart.svg';
 import homeLogo from 'src/assets/images/home.svg';
 
-import { quizContext } from 'src/contexts/quizContext';
-import { Link } from 'react-router-dom';
-
 const QuizFinished = () => {
-    const { userResponse } = useContext(quizContext);
-    console.log(userResponse)
+    const { currentScore, noOfQuestionAttempted, noOfWrongAnswers, noOfRightAnswers, setCurrentScore } = useContext(quizContext);
+    const restart = () => {
+        setCurrentScore(prev => prev-prev);
+    }
     return (
         <div className='wrapper'>
             <div className='user-quiz-details'>
@@ -16,10 +20,10 @@ const QuizFinished = () => {
                     <h1>Quiz Completed!</h1>
                     <div className='quiz-details'>
                         <ul>
-                            <li>Your Score: {userResponse.currentScore}</li>
-                            <li>No of Attempts: {userResponse.noOfQuestionAttempted}</li>
-                            <li>No of Right Answer: {userResponse.noOfRightAnswers}</li>
-                            <li>No of Wrong Answer: {userResponse.noOfWrongAnswers}</li>
+                            <li>Your Score: {currentScore}</li>
+                            <li>No of Attempts: {noOfQuestionAttempted}</li>
+                            <li>No of Right Answer: {noOfRightAnswers}</li>
+                            <li>No of Wrong Answer: {noOfWrongAnswers}</li>
 
                         </ul>
                     </div>
@@ -29,7 +33,7 @@ const QuizFinished = () => {
                         <button className='restart-btn'><img src={homeLogo} /><span>Go to Home</span></button>
                     </Link>
                     <Link to='/start-quiz'>
-                        <button className='restart-btn'><img src={restartLogo} /><span>Replay Quiz</span></button>
+                        <button className='restart-btn'><img src={restartLogo} onClick={restart}/><span>Replay Quiz</span></button>
                     </Link>
                 </div>
             </div>

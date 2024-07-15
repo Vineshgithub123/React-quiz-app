@@ -1,7 +1,7 @@
 @import '../../assets/scss/main.scss';
 
 .wrapper {
-    background-color: #332d2d;
+    background-color: #77aa58;
     border-radius: 10px;
     padding: 30px;
     height: 100vh;
@@ -11,12 +11,13 @@
 
     .user-quiz-details {
         @include d-flex(column);
-        background: white;
+        background: #fef7ec;
         padding: 20px;
         border-radius: 20px;
         display: flex;
         width: 600px;
         gap: 20px;
+
 
         .quiz-content {
             display: flex;
@@ -27,6 +28,13 @@
         .replay {
             display: flex;
             justify-content: space-evenly;
+
+            @media screen and (max-width : 500px) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
 
             a {
                 text-decoration: none;

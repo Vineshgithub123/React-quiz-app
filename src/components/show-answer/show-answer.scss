@@ -4,7 +4,7 @@
     display: none;
 
     &.open {
-        // display: block;
+        padding: 50px;
         align-content: center;
         position: fixed;
         z-index: 1;
@@ -41,16 +41,31 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
+                .ans {
+                    display: flex;
+                    img {
+                        height: 35px;
+                        margin-right: 10px;
+                    }
+
+                    p {
+                        font-size: 25px;
+                        font-weight: 600;
+                        margin-top: 0;
+                    }
+                }
             }
 
             .try-next-btn {
+                all: unset;
                 display: block;
-                background-color: $red;
+                background-color: #77aa58;
                 width: 200px;
-                height: 50px;
+                height: 39px;
                 line-height: 100px;
                 margin: auto;
-                color: $light;
+                color: #fff;
                 position: relative;
                 top: 0;
                 bottom: 0;
@@ -59,19 +74,19 @@
                 cursor: pointer;
                 overflow: hidden;
                 border-radius: 5px;
-                box-shadow: 0 0 20px 0 $dark;
 
                 &::after {
                     content: attr(data-text);
                     font-family: cursive;
-                    font-size: 25px;
+                    font-size: 19px;
                     position: relative;
-                    bottom: 27px;
+                    bottom: 34px;
+                    left: 33px;
                 }
 
                 .img {
                     position: absolute;
-                    height: 48px;
+                    height: 35px;
                     left: 0;
                     display: inline-block;
                     width: 0;

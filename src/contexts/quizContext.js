@@ -2,60 +2,53 @@ import React, { createContext, useState } from "react";
 
 const quizContext = createContext({
   userResponse: {},
-  setUserResponse: () => { }
-  
+  setUserResponse: () => { },
+
+  totalQuestions: 0,
+  setTotalQuestions: () => { },
+  currentQuestion: 0,
+  setCurrentQuestion: () => 0,
+  currentScore: 0,
+  setCurrentScore: () => 0,
+  noOfQuestionAttempted: 0,
+  setnoOfQuestionAttempted: () => 0,
+  noOfWrongAnswers: 0,
+  noOfRightAnswers: 0,
+  setNoOfWrongAnswers: () => {},
+  setNoOfRightAnswers: () => {}
 });
 
 const QuizProvider = ({ children }) => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [questions, setQuestions] = useState([]);
-  const [currentQuestionNumber, setCurrentQuestionNumber] = useState(1);
-  const [isCurrentQuestionAnswered, setIsCurrentQuestionAnswered] = useState(false);
-  const [currentScore, setCurrentScore] = useState(0);
   const [userResponse, setUserResponse] = useState({});
+  const [totalQuestions, setTotalQuestions] = useState(0);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [noOfQuestionAttempted, setnoOfQuestionAttempted] = useState(0);
+  const [noOfWrongAnswers, setNoOfWrongAnswers] = useState(0);
+  const [noOfRightAnswers, setNoOfRightAnswers] = useState(0);
 
-
-
-  const updateContext = (newState) => {
-    setCurrentQuestion(newState.currentQuestion || currentQuestion);
-    setCurrentQuestionNumber(newState.currentQuestionNumber || currentQuestionNumber);
-    setIsCurrentQuestionAnswered(newState.isCurrentQuestionAnswered || isCurrentQuestionAnswered);
-    setCurrentScore(newState.currentScore || currentScore);
-  };
-
-  const setSelectedOption = (option) => {
-    updateContext({ isCurrentQuestionAnswered: true, selectedOption: option });
-  };
-
-  const incrementScore = (points) => {
-    updateContext({ currentScore: currentScore + points });
-  };
-
-  const goToNextQuestion = () => {
-    if (currentQuestion < questions.length - 1) {
-      updateContext({
-        currentQuestion: currentQuestion + 1,
-        currentQuestionNumber: currentQuestionNumber + 1,
-        isCurrentQuestionAnswered: false,
-      });
-    }
-  };
+  // console.log(userResponse)
 
 
   return (
     <quizContext.Provider
       value={{
-        currentQuestion,
-        currentQuestionNumber,
-        isCurrentQuestionAnswered,
-        currentScore,
         userResponse,
         setUserResponse,
-        setCurrentQuestion: updateContext,
-        setSelectedOption,
-        setIsCurrentQuestionAnswered,
-        setCurrentScore: incrementScore,
-        goToNextQuestion,
+
+
+        totalQuestions,
+        setTotalQuestions,
+        currentQuestion,
+        setCurrentQuestion,
+        currentScore,
+        setCurrentScore,
+        noOfQuestionAttempted,
+        setnoOfQuestionAttempted,
+        noOfRightAnswers,
+        noOfWrongAnswers,
+        setNoOfRightAnswers,
+        setNoOfWrongAnswers
       }}
     >
       {children}

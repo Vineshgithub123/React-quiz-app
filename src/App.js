@@ -8,12 +8,13 @@ import QuizFinished from './pages/quiz-over/quiz-over';
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/start-quiz' element={<QuizProvider><Quiz /></QuizProvider>} />
-        <Route path='/end-quiz' element={<QuizProvider><QuizFinished /></QuizProvider>} />
-
-      </Routes>
+      <QuizProvider>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/start-quiz' element={<Quiz />} />
+          <Route path='/end-quiz' element={<QuizFinished />} />
+        </Routes>
+      </QuizProvider>
     </BrowserRouter>
   );
 }
